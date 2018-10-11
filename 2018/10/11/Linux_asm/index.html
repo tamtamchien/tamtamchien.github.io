@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Linux 匯編語言程式設計 (使用NASM) | ���</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Linux 匯編語言程式設計(使用NASM)1. 工具 Compiler GNU as NASM     Linker GNU ld     2. 參考資料網路連結  Debugging with NASM and gdb Linux Syscall Reference Linux 64 bit system call Linux System Call Table(64 bit) The Def">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 匯編語言程式設計 (使用NASM)">
+<meta property="og:url" content="http://yoursite.com/2018/10/11/Linux_asm/index.html">
+<meta property="og:site_name" content="���">
+<meta property="og:description" content="Linux 匯編語言程式設計(使用NASM)1. 工具 Compiler GNU as NASM     Linker GNU ld     2. 參考資料網路連結  Debugging with NASM and gdb Linux Syscall Reference Linux 64 bit system call Linux System Call Table(64 bit) The Def">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-11T06:53:38.208Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux 匯編語言程式設計 (使用NASM)">
+<meta name="twitter:description" content="Linux 匯編語言程式設計(使用NASM)1. 工具 Compiler GNU as NASM     Linker GNU ld     2. 參考資料網路連結  Debugging with NASM and gdb Linux Syscall Reference Linux 64 bit system call Linux System Call Table(64 bit) The Def">
+  
+    <link rel="alternate" href="/atom.xml" title="���" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">���</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Linux_asm" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/11/Linux_asm/" class="article-date">
+  <time datetime="2018-10-11T06:52:30.449Z" itemprop="datePublished">2018-10-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux 匯編語言程式設計 (使用NASM)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Linux-匯編語言程式設計-使用NASM"><a href="#Linux-匯編語言程式設計-使用NASM" class="headerlink" title="Linux 匯編語言程式設計(使用NASM)"></a><strong>Linux 匯編語言程式設計(使用NASM)</strong></h2><h3 id="1-工具"><a href="#1-工具" class="headerlink" title="1. 工具"></a><strong>1. 工具</strong></h3><ul>
+<li><strong>Compiler</strong><ul>
+<li><a href="https://en.wikipedia.org/wiki/GNU_Assembler" target="_blank" rel="noopener">GNU as</a></li>
+<li><a href="https://www.nasm.us/" target="_blank" rel="noopener">NASM</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Linker</strong><ul>
+<li>GNU ld</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-參考資料"><a href="#2-參考資料" class="headerlink" title="2. 參考資料"></a><strong>2. 參考資料</strong></h3><p><strong>網路連結</strong></p>
+<ul>
+<li><a href="https://www.csee.umbc.edu/portal/help/nasm/nasm.shtml" target="_blank" rel="noopener">Debugging with NASM and gdb</a></li>
+<li><a href="https://syscalls.kernelgrok.com/" target="_blank" rel="noopener">Linux Syscall Reference</a></li>
+<li><a href="https://filippo.io/linux-syscall-table/" target="_blank" rel="noopener">Linux 64 bit system call</a></li>
+<li><a href="https://thevivekpandey.github.io/posts/2017-09-25-linux-system-calls.html" target="_blank" rel="noopener">Linux System Call Table(64 bit)</a></li>
+<li><a href="https://blog.packagecloud.io/eng/2016/04/05/the-definitive-guide-to-linux-system-calls/" target="_blank" rel="noopener">The Definitive Guide to Linux System Calls</a></li>
+<li><a href="https://github.com/bminor/binutils-gdb" target="_blank" rel="noopener">binutil原始碼</a></li>
+<li><a href="https://en.wikipedia.org/wiki/X86_instruction_listings" target="_blank" rel="noopener">x86 指令集</a></li>
+<li><a href="https://blog.packagecloud.io/eng/2016/02/29/how-does-strace-work/" target="_blank" rel="noopener">How does strace work?</a></li>
+<li><a href="https://en.wikibooks.org/wiki/X86_Assembly/Interfacing_with_Linux" target="_blank" rel="noopener">X86 Assembly/Interfacing with Linux</a></li>
+<li><a href="https://lwn.net/Articles/604515/" target="_blank" rel="noopener">Anatomy of a system call, part 2</a></li>
+</ul>
+<p><strong>參考書籍</strong></p>
+<ul>
+<li>[1] Guide to Assembly Language Programming in Linux, 2005</li>
+<li>[2] Low level Programming, 2017</li>
+</ul>
+<hr>
+<h3 id="3-範例程式"><a href="#3-範例程式" class="headerlink" title="3. 範例程式"></a><strong>3. 範例程式</strong></h3><p><strong>[例 1] hello.asm (32-bit ELF 程式)</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">section .data</span><br><span class="line">msg db &quot;Hello World!&quot;,0xa</span><br><span class="line">len equ $ - msg</span><br><span class="line"></span><br><span class="line">section .text</span><br><span class="line"></span><br><span class="line"> global _start   ;export the entry point to the ELF linker or loaders recognize _start as their entry point</span><br><span class="line"></span><br><span class="line">_start: </span><br><span class="line">    mov edx,len</span><br><span class="line">	mov ecx,msg</span><br><span class="line">	mov ebx,1</span><br><span class="line">	mov eax,4</span><br><span class="line">	int 0x80</span><br><span class="line">	mov ebx,0</span><br><span class="line">	mov eax,1</span><br><span class="line">	int 0x80</span><br></pre></td></tr></table></figure></p>
+<p>底下的命令會產生 <strong>32-bit ELF</strong>格式, 所以使用 ld 做連結的時候需要使用 32-bit elf 格式, 因為 ld 目前是用 64-bit elf 格式作連結<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nasm -f elf hello.asm</span><br></pre></td></tr></table></figure></p>
+<p>Linker 指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ld -m elf_i386 hello.o -o hello</span><br></pre></td></tr></table></figure></p>
+<p>下列命令可以知道目前 ld 支援的格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ ld -V</span><br><span class="line">GNU ld (GNU Binutils for Ubuntu) 2.24</span><br><span class="line">  Supported emulations:</span><br><span class="line">   elf_x86_64</span><br><span class="line">   elf32_x86_64</span><br><span class="line">   elf_i386</span><br><span class="line">   i386linux</span><br><span class="line">   elf_l1om</span><br><span class="line">   elf_k1om</span><br><span class="line">   i386pep</span><br><span class="line">   i386pe</span><br></pre></td></tr></table></figure></p>
+<p><strong>[例 2] hello.asm (64-bit ELF程式)</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">global _start</span><br><span class="line"></span><br><span class="line">section .data</span><br><span class="line">message: db &apos;Hello, world!&apos;,10</span><br><span class="line"></span><br><span class="line">section .text</span><br><span class="line">_start:</span><br><span class="line">    mov     rax, 1           ;system call number should be stored in rax</span><br><span class="line">    mov     rdi, 1           ; argument #1 in rdi: where to write (descriptor)?</span><br><span class="line">	mov     rsi, message     ; argument #2 in rsi: where does the string start?</span><br><span class="line">    mov     rdx, 14          ; argument #3 in rdx: how many bytes to write?</span><br><span class="line">    syscall                  ; this instruction invokes a system call</span><br><span class="line"></span><br><span class="line">	mov     rax, 60          ; &apos;exit&apos; syscall number</span><br><span class="line">    xor     rdi, rdi</span><br><span class="line">    syscall</span><br></pre></td></tr></table></figure></p>
+<p>底下的命令會產生 <strong>64-bit ELF</strong> 格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nasm -f elf64 hello.asm -o hello.o</span><br></pre></td></tr></table></figure></p>
+<p>Linker 指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ld -o hello hello.o</span><br></pre></td></tr></table></figure></p>
+<p>由 [例1] 和 [例2] 可以看出 32-bit 和 64-bit 的 syscall 是不一樣的, 這點要特別注意, 所以在寫程式或是反匯編的時候要先確認是 32-bit 或是 64-bit ELF</p>
+<p><strong> [例 3] sample.asm </strong> ( 參考書籍 [1] )</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">%include &quot;io.mac&quot;</span><br><span class="line"></span><br><span class="line">.DATA</span><br><span class="line">name_msg     db &apos;Please Enter Your Name: &apos;,0</span><br><span class="line">quary_msg    db &apos;How Many times to repeat welcome message: &apos;,0</span><br><span class="line">confirm_msg1 db &apos;Repeat Welcome Message &apos;,0</span><br><span class="line">confirm_msg2 db &apos; times? (y/n) &apos;,0</span><br><span class="line">welcome_msg  db &apos;Welcome to ASM language programming &apos;,0</span><br><span class="line"></span><br><span class="line">.UDATA</span><br><span class="line">user_name  resb 16</span><br><span class="line">response   resb 1</span><br><span class="line"></span><br><span class="line">.CODE</span><br><span class="line">       .STARTUP</span><br><span class="line">	   PutStr name_msg</span><br><span class="line">	   GetStr user_name,16</span><br><span class="line">ask_count:</span><br><span class="line">       PutStr quary_msg</span><br><span class="line">	   GetInt CX</span><br><span class="line">	   PutStr confirm_msg1</span><br><span class="line">	   GetInt CX</span><br><span class="line">	   PutStr confirm_msg2</span><br><span class="line">	   GetCh  [response]</span><br><span class="line">	   cmp    byte [response],&apos;y&apos;</span><br><span class="line">	   jne    ask_count</span><br><span class="line">display_msg:</span><br><span class="line">       PutStr welcome_msg</span><br><span class="line">	   PutStr user_name</span><br><span class="line">	   nwln</span><br><span class="line">	   loop   display_msg</span><br><span class="line">	   .EXIT</span><br></pre></td></tr></table></figure>
+<p>接下來編譯程式(compile)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nasm -f elf sample.asm -l sample.lst</span><br></pre></td></tr></table></figure>
+<p>-l 參數會產生出 list file</p>
+<p>連結程式(link)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ld -m elf_i386 io.o sample.o -o sample</span><br></pre></td></tr></table></figure>
+<h3 id="使用-GDB-Debug-程式"><a href="#使用-GDB-Debug-程式" class="headerlink" title="使用 GDB Debug 程式"></a><strong>使用 GDB Debug 程式</strong></h3><p>編譯程式的時候需要加入其他參數</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nasm -f elf -g -F stabs hello.asm</span><br></pre></td></tr></table></figure>
+<p>連結程式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ld -m elf_i386 io.o hello.o -o hello</span><br></pre></td></tr></table></figure>
+<p>輸入 gdb</p>
+<hr>
+<h3 id="4-ELF-檔案格式"><a href="#4-ELF-檔案格式" class="headerlink" title="4. ELF 檔案格式"></a><strong>4. ELF 檔案格式</strong></h3><p>了解 ELF 格式, 就會了解 Linux 的詳細運作</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/11/Linux_asm/" data-id="cjn48788w0001ucaqz6g11lpk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/11/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/10/11/Linux_asm/">Linux 匯編語言程式設計 (使用NASM)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/11/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 �p²<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
